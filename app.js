@@ -30,6 +30,13 @@ app.use(checkForAuthenticationCookie("token"));
 app.use(express.static(path.resolve("./public")));
 
 app.get("/", async (req, res) => {
+  console.log("dfghjkl;")
+  res.render("home", {
+    message: "Hello form server"
+  });
+});
+
+app.get("/blogs", async (req, res) => {
   const allBlogs = await Blog.find({});
   res.render("home", {
     user: req.user,
