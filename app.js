@@ -21,9 +21,6 @@ mongoose
   .connect(process.env.MONGO_URL)
   .then((e) => console.log("MongoDB Connected"));
 
-app.set("view engine", "ejs");
-app.set("views", path.resolve("./views"));
-
 app.use(express.urlencoded({ extended: false }));
 app.use(cookiePaser());
 app.use(checkForAuthenticationCookie("token"));
@@ -31,9 +28,7 @@ app.use(express.static(path.resolve("./public")));
 
 app.get("/", async (req, res) => {
   console.log("dfghjkl;")
-  res.render("home", {
-    message: "Hello form server"
-  });
+  res.send("Hello")
 });
 
 app.get("/blogs", async (req, res) => {
