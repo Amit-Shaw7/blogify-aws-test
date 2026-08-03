@@ -28,7 +28,7 @@ app.use(express.static(path.resolve("./public")));
 
 app.get("/", async (req, res) => {
   console.log("dfghjkl;")
-  res.send("Hello")
+  res.send("Hello from aws")
 });
 
 app.get("/blogs", async (req, res) => {
